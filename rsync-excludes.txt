@@ -1,0 +1,306 @@
+# rsync-homedir-excludes
+#
+# A list of files to exclude when backing up *nix home directories using rsync.
+#
+# Author: Ioannis Androulidakis
+# Refs: https://raw.githubusercontent.com/rubo77/rsync-homedir-excludes/master/rsync-homedir-excludes.txt
+# Date: 2021-08-28
+
+###########################
+# Files not backup worthy #
+###########################
+
+#.gradle
+#.gvm
+#.kde/share/apps/nepomuk
+#.local/share/notbit
+#.local/libvirt
+#.local/share/libvirt
+#.wine
+#/Downloads
+*Popcorntime*
+#/VirtualBox*
+#/Nextcloud
+#_build
+#
+#
+## Add Game Folders here:
+#
+#/games
+#.local/share/Steam
+#.steam
+#/Steam
+#.technic
+#.PlayOnLinux
+#.local/share/lutris/runners/wine/
+#
+## Spotify
+#.config/spotify/Users
+## Viber
+#.ViberPC/*
+#
+## those folders contain only temporary Videos I want to watch
+#/Videos
+#/Movies
+#
+## some history files
+#.python_history
+#.bash_history
+#.zsh_history
+#
+## Python eggs
+#.local/lib/python*
+#
+## Python virtual environments
+#PycharmProjects/**/venv
+## IPython
+# .ipython/*
+#
+
+################################################
+# These directories may definitely be excluded #
+################################################
+
+# Contains mounted file systems:
+
+.gvfs
+.local/share/gvfs-metadata
+# contains the actual encrypted home directory
+/.Private
+
+# Session-specific:
+/.dbus
+.cache
+/.Trash
+.Trash-1*
+.local/share/Trash
+/Trash
+
+# Cached info about audio CDs:
+.cddb
+
+# Cached packages lists:
+.aptitude
+
+# Node Package Manager cache
+.npm
+
+# Node Version Manager
+.nvm
+
+#Flash-specific:
+
+# Cache for flash, maybe others?
+.adobe
+# except for Flash persistence, there is no reason to keep this
+.macromedia
+
+#Files:
+
+# Contains errors from the current graphical session
+.xsession-errors
+.wayland-errors
+
+# Recently used files
+.local/share/RecentDocuments
+.recently-used
+.recently-used.xbel
+recently-used.xbel
+.thumbnails
+.thumb
+Thumbs.db
+.DS_Store
+.localised
+.CFUserTextEncoding
+.zcompdump*
+.wget-hsts
+
+# Common Unix Printing System
+/.cups
+
+# run-time configuration information for Subversion
+/.subversion
+
+# Python virtual environments
+/.virtualenvs
+
+# Session-specific
+.Xauthority
+.ICEauthority
+.gksu.lock
+.pulse
+.pulse-cookie
+.esd_auth
+
+#KDE specific:
+
+# Recent documents on KDE
+.kde/share/apps/RecentDocuments
+.kde4/share/apps/RecentDocuments
+# Contains a history of the Klipper clipboard (KDE)
+.kde/share/apps/klipper
+.kde4/share/apps/klipper
+.local/share/klipper
+# You will loose saved scrolling positions of PDFs
+.kde/share/apps/okular/docdata
+.kde/share/apps/gwenview/recentfolders
+.kde4/share/apps/okular/docdata
+.kde4/share/apps/gwenview/recentfolders
+.local/share/okular/docdata
+.local/share/org.kde.gwenview/recentfolders
+# Cached other users' profile pics
+.kde/share/apps/kmess/displaypics
+.kde4/share/apps/kmess/displaypics
+# Cached emoticons of others
+.kde/share/apps/kmess/customemoticons
+.kde4/share/apps/kmess/customemoticons
+
+#Gnome specific:
+
+# tracker data files
+.local/share/tracker
+
+#Tor Browser supposed to not be backupped ;)
+.local/share/torbrowser
+
+#Firefox-specific (see also Profile folder):
+
+.mozilla/firefox/*/Cache
+# in case Fx crashes dumps will be stored in this
+.mozilla/firefox/*/minidumps
+# session-specific
+.mozilla/firefox/*/.parentlock
+# phishing database, recreated
+.mozilla/firefox/*/urlclassifier3.sqlite
+# blacklisted extensions
+.mozilla/firefox/*/blocklist.xml
+# extension database, recreated on startup
+.mozilla/firefox/*/extensions.sqlite
+.mozilla/firefox/*/extensions.sqlite-journal
+.mozilla/firefox/*/extensions.rdf
+.mozilla/firefox/*/extensions.ini
+.mozilla/firefox/*/extensions.cache
+# cached UI data, recreated
+.mozilla/firefox/*/XUL.mfasl
+.mozilla/firefox/*/XPC.mfasl
+.mozilla/firefox/*/xpti.dat
+.mozilla/firefox/*/compreg.dat
+# cached plugin data, recreated
+.mozilla/firefox/*/pluginreg.dat
+
+# Thunderbird Cache in your profile folder
+#.thunderbird/*/Cache
+
+# Keychain dir (manage SSH and GPG keys, front-end to ssh-agent and ssh-add)
+/.keychain
+
+#SSH:
+#.ssh/*
+
+#Password Store
+#.password-store/*
+
+#GnuPG:
+
+.gnupg/rnd
+.gnupg/random_seed
+.gnupg/.#*
+.gnupg/*.lock
+.gnupg/gpg-agent-info-*
+
+#Kubernetes
+#.minikube/*
+#.kube/*
+
+#Google Earth:
+.googleearth/Temp
+.googleearth/Cache
+
+#Google Chrome:
+
+.config/google-chrome/ShaderCache
+.config/google-chrome/Default/Local Storage
+.config/google-chrome/Default/Session Storage
+.config/google-chrome/Default/Application Cache
+.config/google-chrome/Default/History Index *
+.config/google-chrome/Default/Service Worker/CacheStorage
+
+#Chromium:
+
+.config/chromium/Default/Local Storage
+.config/chromium/Default/Session Storage
+.config/chromium/Default/Application Cache
+.config/chromium/Default/History Index *
+/snap/chromium/common/.cache
+/snap/chromium/*/.config/chromium/Default/Service Worker/CacheStorage
+/snap/chromium/*/.local/share/
+
+#Brave
+.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/
+.config/BraveSoftware/Brave-Browser/Default/Local Storage/
+.config/BraveSoftware/Brave-Browser/Default/Service Worker/CacheStorage/
+.config/BraveSoftware/Brave-Browser/Default/Session Storage/
+.config/BraveSoftware/Brave-Browser/Safe Browsing/
+.config/BraveSoftware/Brave-Browser/ShaderCache/
+
+#Other
+
+# Temporary files
+nohup.out
+
+# LibreOffice cache files
+.config/libreoffice/4/cache
+
+# Snap caches
+.config/*/Cache
+
+# Atom
+.config/Atom/*Cache
+.config/Atom/IndexedDB
+.atom/compile-cache/
+
+# Git
+#.gitconfig/*
+#.gitignore_global
+
+# Vim
+#.vim/*
+#.viminfo
+#.vimrc
+
+# VS Code
+# .vscode/*
+
+# Oh-my-zsh
+#.oh-my-zsh/
+#.zshrc
+#.zshrc.pre-oh-my-zsh
+
+# Tmux
+#.tmux/*
+#.tmux.conf
+
+# VS Code
+.vscode-oss/extensions/*
+.vscode/extensions/*
+.config/Code - OSS/blob_storage/
+.config/Code - OSS/GPUCache/
+.config/Code - OSS/logs/
+.config/Code/blob_storage/
+.config/Code/GPUCache/
+.config/Code/logs/
+
+# VirtualBox
+.config/VirtualBox/VBoxSVC.log*
+.config/VirtualBox/VBoxGuestAdditions_*
+
+# Vagrant
+#.vagrant/
+#.vagrant.d/
+
+# golang Cache
+go/pkg/mod/cache
+
+# ccache, remove cache but keep config
+.ccache/?
+.ccache/tmp
